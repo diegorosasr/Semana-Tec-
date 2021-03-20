@@ -32,7 +32,7 @@ def convolve2D(image, kernel, padding=0, strides=1):
         imagePadded[int(padding):int(-1 * padding), int(padding):int(-1 * padding)] = image
     else:
         imagePadded = image
-        
+
     for y in range(image.shape[1]):
         if y > image.shape[1] - yKernShape:
             break
@@ -51,7 +51,7 @@ def convolve2D(image, kernel, padding=0, strides=1):
 
 if __name__ == '__main__':
     image = processImage('Image.jpeg')
-    
+
     kernel = np.array([[-1, -1, -1], [-1, 8, -1], [-1, -1, -1]])
 
     output = convolve2D(image, kernel, padding=2)
